@@ -167,7 +167,7 @@ Job ID,Job Title,Industry,Required Education,Required Degree Field,Years of Expe
 166,Public Policy Analyst,Law and Government,Master,Arts and Social Sciences,4,"['Policy Research', 'Legislative Analysis', 'Stakeholder Engagement']","['Critical Thinking', 'Communication', 'Negotiation']"
 167,Police Officer,Law and Government,None,Arts and Social Sciences,2,"['Law Enforcement', 'Criminal Investigation', 'First Aid']","['Communication', 'Decision-Making', 'Physical Fitness']"
 168,Firefighter,Law and Government,None,Arts and Social Sciences,2,"['Fire Suppression', 'Emergency Medical Response', 'Hazardous Materials Handling']","['Bravery', 'Teamwork', 'Physical Fitness']"
-169,Diplomat,Law and Government,Master,Arts and Social Sciences,2,"[Foreign Language Proficiency','International Relations Knowledge','Negotiation and Mediation']","['Cultural Sensitivity and Awareness','Emotional Intelligence','Communication']"
+169,Diplomat,Law and Government,Master,Arts and Social Sciences,2,"['Foreign Language Proficiency','International Relations Knowledge','Negotiation and Mediation']","['Cultural Sensitivity and Awareness','Emotional Intelligence','Communication']"
 170,Immigration Officer,Law and Government,Bachelor,Arts and Social Sciences,3,"['Legal Documentation', 'Immigration Laws', 'Case Management']","['Communication', 'Empathy', 'Attention to Detail']"
 171,Judge,Law and Government,Master,Arts and Social Sciences,5,"['Legal Research', 'Judicial Procedures', 'Courtroom Management']","['Decision-Making', 'Integrity', 'Leadership']"
 172,Paralegal,Law and Government,Bachelor,Arts and Social Sciences,2,"['Legal Writing', 'Document Drafting', 'Case Preparation']","['Organization', 'Time Management', 'Teamwork']"
