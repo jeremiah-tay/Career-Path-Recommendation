@@ -57,7 +57,34 @@ cd Career-Path-Recommendation
    - Parse the resume using NLP
    - Extract structured data (Education, Experience, Skills)
    - Compute similarity scores between the students and the available jobs)
+   - Recommend the top 5 jobs
    - Insert both the student profile and recommendations into your PostgreSQL database
+5. Optionally, you can switch to clustering-based recommendations.
+
+## 📦 Sample Output
+```java
+Top 5 Recommended Jobs for John Doe:
+
+Brand Strategist: 0.665
+  Education Score:  1
+  Degree Score:     0.4620000123977661
+  Experience Score: 0.279
+  Hard Skill Score: 0.8460000157356262
+  Soft Skill Score: 0.7570000290870667
+
+Sales Executive: 0.660
+  Education Score:  1
+  Degree Score:     0.4620000123977661
+  Experience Score: 0.512
+  Hard Skill Score: 0.722000002861023
+  Soft Skill Score: 0.652999997138977
+
+Social Media Manager: 0.645
+  Education Score:  1
+  Degree Score:     0.4620000123977661
+  Experience Score: 0.389
+  Hard Skill Score: 0.7429999709129333
+  Soft Skill Score: 0.6790000200271606
 
 
 
