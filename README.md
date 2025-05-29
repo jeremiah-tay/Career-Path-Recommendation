@@ -46,9 +46,9 @@ cd Career-Path-Recommendation
 ## 🧪 How It Works
 1. Place your resume PDF into the ```resume/``` folder (e.g., ```resume/John Doe Resume.pdf```)
 2. Open the main.py script and scroll to the bottom. Edit the following lines to point to your resume file:
-  ```
-  if __name__ == "__main__":
-      main("resume/John Doe Resume.pdf", top_n=5)
+   ```
+   if __name__ == "__main__":
+       main("resume/John Doe Resume.pdf", top_n=5)
   ```
 3. Run the main script:
    ```
