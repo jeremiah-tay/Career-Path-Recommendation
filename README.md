@@ -40,7 +40,26 @@ DB_PORT=
 ```
 ### 🔧 Installation
 ```
-git clone https://github.com/your-username/career-path-recommendation.git
-cd career-path-recommendation
-pip install -r requirements.txt
+git clone https://github.com/jeremiah-tay/Career-Path-Recommendation.git
+cd Career-Path-Recommendation
 ```
+## 🧪 How It Works
+1. Place your resume PDF into the ```resume/``` folder (e.g., ```resume/John Doe Resume.pdf```)
+2. Open the main.py script and scroll to the bottom. Edit the following lines to point to your resume file:
+  ```
+  if __name__ == "__main__":
+      main("resume/John Doe Resume.pdf", top_n=5)
+  ```
+3. Run the main script:
+   ```
+   python main.py
+   ```
+4. The pipeline will:
+   - Parse the resume using NLP
+   - Extract structured data (Education, Experience, Skills)
+   - Compute similarity scores between the students and the available jobs)
+   - Insert both the student profile and recommendations into your PostgreSQL database
+
+
+
+
