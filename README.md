@@ -17,11 +17,30 @@ It uses Natural Language Processing (NLP), semantic embeddings, and machine lear
 ## 📁 Project Structure
 ```
 career-path-recommendation/
-├── resume/                     # Uploaded student resumes
-├── job_data.csv               # Curated job role dataset
-├── recommendation.py          # Main recommendation engine
-├── extractor.py               # Resume parsing logic
-├── database.py                # PostgreSQL data insertion
-├── app.py / main.py           # Entry point
-├── README.md                  # Project documentation
+├── resume/                                      # Uploaded student resumes
+├── job_data.csv                                 # Curated job role dataset
+├── RecommendationProcessor.py                   # Recommendation engine
+├── StudentInfoExtractor.py                      # Resume extraction and parsing
+├── database.py                                  # PostgreSQL data insertion
+├── main.py                                      # Main pipeline file
+├── recommender_system_working_notebook.ipynb    # Project Rough Working
+├── README.md                                    # Project documentation
+```
+## 🚀 Getting Started
+### ✅ Prerequisites
+- Python 3.8+
+- PostgreSQL running with credentials configured
+- Create a .env file with the following keys:
+```
+DB_HOST=
+DB_NAME=
+DB_USER=
+DB_PASSWORD=
+DB_PORT=
+```
+### 🔧 Installation
+```
+git clone https://github.com/your-username/career-path-recommendation.git
+cd career-path-recommendation
+pip install -r requirements.txt
 ```
