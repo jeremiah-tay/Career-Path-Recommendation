@@ -104,3 +104,13 @@ class RecommendationProcessor:
             print()
         
         return sorted_jobs[:top_n]
+    
+    def generate_recommendation_row(self, student_name, top_jobs):
+        return {
+            "name": student_name,
+            "first_recommendation": top_jobs[0][0] if len(top_jobs) > 0 else None,
+            "second_recommendation": top_jobs[1][0] if len(top_jobs) > 1 else None,
+            "third_recommendation": top_jobs[2][0] if len(top_jobs) > 2 else None,
+            "fourth_recommendation": top_jobs[3][0] if len(top_jobs) > 3 else None,
+            "fifth_recommendation": top_jobs[4][0] if len(top_jobs) > 4 else None
+        }
