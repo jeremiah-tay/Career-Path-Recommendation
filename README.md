@@ -6,20 +6,22 @@ This project aims to help students make informed career choices by analyzing the
 - Hard and soft skills
 - Educational background
 - Work experience
-It uses Natural Language Processing (NLP), semantic embeddings, and machine learning to extract, structure, and compare student profiles against a curated dataset of job opportunities.
+The system leverages Natural Language Processing (NLP), semantic embeddings, and machine learning to extract, structure, and compare student profiles against a curated dataset of job opportunities.
 
 ## 💡 Features
-- 🧠 **Resume Parsing**: Extract structured information (skills, education, experience) from PDF resumes using NLP.
-- ✨ **Semantic Skill Matching**: Use sentence embeddings to compute similarity between student profiles and job requirements.
+- 🧠 **Resume Parsing**: Extract structured information (skills, education, experience) from PDF resumes using NLP techniques.
+- ✨ **Semantic Skill Matching**: Uses sentence embeddings to compute similarity between student profiles and job descriptions.
+- 🤖 **Clustering-Based Recommendation**: Optionally cluster similar jobs and match students within the most relevant group.
 - 🔍 **Top-N Job Recommendations**: Recommend the top 5 most relevant jobs for each student.
-- 📊 **PostgreSQL Integration**: Store parsed profiles and recommendation results in a relational database.
+- 📊 **PostgreSQL Integration**: Automatically stores parsed profiles and job recommendations in a PostgreSQL database.
 
 ## 📁 Project Structure
 ```
 career-path-recommendation/
 ├── resume/                                      # Uploaded student resumes
 ├── job_data.csv                                 # Curated job role dataset
-├── RecommendationProcessor.py                   # Recommendation engine
+├── RecommendationProcessor.py                   # Semantic scoring recommendation algorithm
+├── ClusterProcessor.py                          # Clustering-based recommendation algorithm
 ├── StudentInfoExtractor.py                      # Resume extraction and parsing
 ├── database.py                                  # PostgreSQL data insertion
 ├── main.py                                      # Main pipeline file
@@ -48,8 +50,8 @@ cd Career-Path-Recommendation
 2. Open the main.py script and scroll to the bottom. Edit the following lines to point to your resume file:
     ```python
    if __name__ == "__main__":
-       main("John Doe Resume.pdf", top_n=5)
-3. Run the main script:
+       main("John Doe Resume.pdf", top_k = 5, algorithm = "semantic")
+3. Run the pipeline on your terminal:
    ```
    python main.py
    ```
@@ -59,7 +61,12 @@ cd Career-Path-Recommendation
    - Compute similarity scores between the students and the available jobs)
    - Recommend the top 5 jobs
    - Insert both the student profile and recommendations into your PostgreSQL database
-5. Optionally, you can switch to clustering-based recommendations.
+
+### 🤖 Algorithms
+You can switch the recommendation engine using the algorithm parameter at the bottom of the main.py file:
+Algorithm Name:            Description:
+semantic (default)         Calculates a weighted semantic similarity score between student and jobs
+clustering                 Uses KMeans to group similar jobs and recommends top matches within the student's cluster.
 
 ## 📦 Sample Output
 ```java
