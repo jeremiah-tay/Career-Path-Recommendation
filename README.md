@@ -23,7 +23,7 @@ career-path-recommendation/
 ├── RecommendationProcessor.py                   # Semantic scoring recommendation algorithm
 ├── ClusterProcessor.py                          # Clustering-based recommendation algorithm
 ├── StudentInfoExtractor.py                      # Resume extraction and parsing
-├── databaseProcessor.py                                  # PostgreSQL data insertion
+├── databaseProcessor.py                         # PostgreSQL data insertion
 ├── main.py                                      # Main pipeline file
 ├── recommender_system_working_notebook.ipynb    # Project Rough Working
 ├── README.md                                    # Project documentation
