@@ -63,10 +63,12 @@ cd Career-Path-Recommendation
    - Insert both the student profile and recommendations into your PostgreSQL database
 
 ### 🤖 Algorithms
-You can switch the recommendation engine using the algorithm parameter at the bottom of the main.py file:
-Algorithm Name:            Description:
-semantic (default)         Calculates a weighted semantic similarity score between student and jobs
-clustering                 Uses KMeans to group similar jobs and recommends top matches within the student's cluster.
+You can switch the recommendation engine using the `algorithm` parameter at the bottom of the `main.py` file.
+
+| Algorithm Name | Description                                                                 |
+|----------------|-----------------------------------------------------------------------------|
+| `semantic`     | Calculates a weighted semantic similarity score between student and jobs.   |
+| `clustering`   | Uses KMeans to group similar jobs and recommend top matches in the cluster. |
 
 ## 📦 Sample Output
 ```java
