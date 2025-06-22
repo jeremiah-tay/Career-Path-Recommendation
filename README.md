@@ -50,7 +50,9 @@ cd Career-Path-Recommendation
 2. Open the main.py script and scroll to the bottom. Edit the following lines to point to your resume file:
     ```python
    if __name__ == "__main__":
-       main("John Doe Resume.pdf", top_k = 5, algorithm = "semantic")
+    resume_pdf_file = "John Doe Resume.pdf"
+    text = extract_text(f"./resume/{resume_pdf_file}")
+    main(text, top_k = 5, algorithm = "Clustering")
 3. Run the pipeline on your terminal:
    ```
    python main.py
@@ -67,33 +69,18 @@ You can switch the recommendation engine using the `algorithm` parameter at the 
 
 | Algorithm Name | Description                                                                 |
 |----------------|-----------------------------------------------------------------------------|
-| `semantic`     | Calculates a weighted semantic similarity score between student and jobs.   |
-| `clustering`   | Uses KMeans to group similar jobs and recommend top matches in the cluster. |
+| `Semantic`     | Calculates a weighted semantic similarity score between student and jobs.   |
+| `Clustering`   | Uses KMeans to group similar jobs and recommend top matches in the cluster. |
 
 ## 📦 Sample Output
 ```java
 Top 5 Recommended Jobs for John Doe:
 
-Brand Strategist: 0.665
-  Education Score:  1
-  Degree Score:     0.4620000123977661
-  Experience Score: 0.279
-  Hard Skill Score: 0.8460000157356262
-  Soft Skill Score: 0.7570000290870667
-
-Sales Executive: 0.660
-  Education Score:  1
-  Degree Score:     0.4620000123977661
-  Experience Score: 0.512
-  Hard Skill Score: 0.722000002861023
-  Soft Skill Score: 0.652999997138977
-
-Social Media Manager: 0.645
-  Education Score:  1
-  Degree Score:     0.4620000123977661
-  Experience Score: 0.389
-  Hard Skill Score: 0.7429999709129333
-  Soft Skill Score: 0.6790000200271606
+Machine Learning Engineer: 0.701
+Data Scientist: 0.701
+AI Product Manager: 0.683
+Prompt Engineer (for AI): 0.664
+Mobile App Developer: 0.663
 
 
 
