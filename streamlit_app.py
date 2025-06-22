@@ -6,7 +6,6 @@ import json
 import time
 import argparse
 import base64
-from docx2pdf import convert
 from pdfminer.high_level import extract_text
 from StudentInfoExtractor import StudentInfoExtractor
 from RecommendationProcessor import RecommendationProcessor
@@ -56,7 +55,7 @@ if uploaded_file is not None:
                 time.sleep(1)  # Optional: simulate loading delay
 
             st.success("✅ Job Recommendation Successful!")
-            
+
             if recommended_jobs is not None:
                 if algorithm == "Clustering":
                     st.subheader("📌 Recommended Jobs")

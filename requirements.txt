@@ -1,0 +1,12 @@
+streamlit
+spacy
+pdfminer.six
+scikit-learn
+sentence-transformers
+skillNer
+pandas
+numpy
+python-dotenv
+psycopg2-binary
+python-dateutil
+rapidfuzz
