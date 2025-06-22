@@ -6,12 +6,9 @@ from RecommendationProcessor import RecommendationProcessor
 from databaseProcessor import databaseProcessor
 from ClusterProcessor import ClusterProcessor
 
-def main(resume_pdf_path, top_k = 5, algorithm = "semantic"):
+def main(text, top_k = 5, algorithm = "semantic"):
     # Load job dataset (hardcoded path)
     job_df = pd.read_csv("job_data.csv")
-
-    # Extract resume text
-    text = extract_text(f"./resume/{resume_pdf_path}")
 
     # Extract structured student info
     extractor = StudentInfoExtractor(text)
@@ -32,13 +29,14 @@ def main(resume_pdf_path, top_k = 5, algorithm = "semantic"):
     student_profile = nlp_df.iloc[-1]
 
     # Recommend top 5 jobs
-    if algorithm == "semantic":
+    if algorithm == "Semantic":
         print("Recommending Jobs using semantic matching...")
         recommender = RecommendationProcessor(student_profile, job_df)
         recommended_jobs = recommender.recommend_top_jobs(top_k)
         new_student = recommender.generate_recommendation_row(recommender.student.Name, recommended_jobs)
+
     
-    elif algorithm == "clustering":
+    elif algorithm == "Clustering":
         print("Recommending Jobs using clustering matching...")
         processor = ClusterProcessor(student_profile, job_df)
         processor.compute_job_score()
@@ -47,6 +45,9 @@ def main(resume_pdf_path, top_k = 5, algorithm = "semantic"):
 
     # Insert student's recommendaiton into the database
     db_processor.insert_job(new_student)
+    return recommended_jobs
 
 if __name__ == "__main__":
-    main("Tay Zhi Wen Jeremiah CV.pdf", top_k = 5, algorithm = "clustering")
+    resume_pdf_file = "Tay Zhi Wen Jeremiah CV.pdf"
+    text = extract_text(f"./resume/{resume_pdf_file}")
+    main(text, top_k = 5, algorithm = "Clustering")

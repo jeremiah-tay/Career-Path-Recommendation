@@ -74,8 +74,8 @@ class RecommendationProcessor:
             0.30 * hard_skill_score +
             0.15 * soft_skill_score
         )
-
-        return {
+        result = [
+            {
             "Job Title": job["Job Title"],
             "Total Score": round(total_score, 3),
             "Education Score": education_score,
@@ -83,34 +83,39 @@ class RecommendationProcessor:
             "Experience Score": round(exp_score, 3),
             "Hard Skill Score": round(hard_skill_score, 3),
             "Soft Skill Score": round(soft_skill_score, 3)
-        }
+        }]
+
+        return pd.DataFrame(result)
     
     def recommend_top_jobs(self, top_n = 5):
-        job_scores = []
+        df = pd.DataFrame(columns=[
+        "Job Title",
+        "Total Score",
+        "Education Score",
+        "Degree Score",
+        "Experience Score",
+        "Hard Skill Score",
+        "Soft Skill Score"
+        ])
         for _, job in self.job_data.iterrows():
             score = self.compute_job_score(job)
-            job_scores.append((job['Job Title'], score))
+            df = pd.concat([df, score], ignore_index=True)
 
-        sorted_jobs = sorted(job_scores, key=lambda x: x[1]['Total Score'], reverse=True)
+        sorted_df = df.sort_values(by="Total Score", ascending=False)
 
+        # Display top 5 jobs
         print(f"\nTop {top_n} Recommended Jobs for {self.student['Name']}:\n")
-        for title, score in sorted_jobs[:top_n]:
-            print(f"{title}: {score['Total Score']:.3f}")
-            print(f"  Education Score:  {score['Education Score']}")
-            print(f"  Degree Score:     {score['Degree Score']}")
-            print(f"  Experience Score: {score['Experience Score']}")
-            print(f"  Hard Skill Score: {score['Hard Skill Score']}")
-            print(f"  Soft Skill Score: {score['Soft Skill Score']}")
-            print()
-        
-        return sorted_jobs[:top_n]
+        for _, row in sorted_df.head(top_n).iterrows():
+            print(f"{row['Job Title']}: {row['Total Score']:.3f}")
+        return sorted_df.head(top_n)
     
     def generate_recommendation_row(self, student_name, top_jobs):
+        titles = top_jobs['Job Title'].tolist()
         return {
             "name": student_name,
-            "first_recommendation": top_jobs[0][0] if len(top_jobs) > 0 else None,
-            "second_recommendation": top_jobs[1][0] if len(top_jobs) > 1 else None,
-            "third_recommendation": top_jobs[2][0] if len(top_jobs) > 2 else None,
-            "fourth_recommendation": top_jobs[3][0] if len(top_jobs) > 3 else None,
-            "fifth_recommendation": top_jobs[4][0] if len(top_jobs) > 4 else None
+            "first_recommendation": titles[0] if len(titles) > 0 else None,
+            "second_recommendation": titles[1] if len(titles) > 1 else None,
+            "third_recommendation": titles[2] if len(titles) > 2 else None,
+            "fourth_recommendation": titles[3] if len(titles) > 3 else None,
+            "fifth_recommendation": titles[4] if len(titles) > 4 else None
         }

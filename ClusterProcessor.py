@@ -90,7 +90,7 @@ class ClusterProcessor:
         top_k_jobs = self.cluster_jobs.sort_values(by = 'similarity', ascending = False).head(k)
 
         # Display top 5 jobs
-        print(f"\nTop {k} Recommended Jobs for {self.student['Name']}:\n\nTotal Score:")
+        print(f"\nTop {k} Recommended Jobs for {self.student['Name']}:\n")
         for _, row in top_k_jobs.iterrows():
             print(f"{row['Job Title']}: {row['similarity']:.3f}")
         
