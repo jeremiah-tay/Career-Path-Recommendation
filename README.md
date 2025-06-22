@@ -14,6 +14,7 @@ The system leverages Natural Language Processing (NLP), semantic embeddings, and
 - 🤖 **Clustering-Based Recommendation**: Optionally cluster similar jobs and match students within the most relevant group.
 - 🔍 **Top-N Job Recommendations**: Recommend the top 5 most relevant jobs for each student.
 - 📊 **PostgreSQL Integration**: Automatically stores parsed profiles and job recommendations in a PostgreSQL database.
+- 🌐 **Streamlit Web Interface**: Clean, interactive frontend for uploading resumes and viewing recommendations.
 
 ## 📁 Project Structure
 ```
@@ -25,6 +26,7 @@ career-path-recommendation/
 ├── StudentInfoExtractor.py                      # Resume extraction and parsing
 ├── databaseProcessor.py                         # PostgreSQL data insertion
 ├── main.py                                      # Main pipeline file
+├── streamlit_app.py                             # Streamlit app entry point
 ├── recommender_system_working_notebook.ipynb    # Project Rough Working
 ├── README.md                                    # Project documentation
 ```
@@ -44,6 +46,7 @@ DB_PORT=
 ```
 git clone https://github.com/jeremiah-tay/Career-Path-Recommendation.git
 cd Career-Path-Recommendation
+pip install -r requirements.txt
 ```
 ## 🧪 How It Works
 1. Place your resume PDF into the ```resume/``` folder (e.g., ```resume/John Doe Resume.pdf```)
@@ -81,7 +84,30 @@ Data Scientist: 0.701
 AI Product Manager: 0.683
 Prompt Engineer (for AI): 0.664
 Mobile App Developer: 0.663
+```
 
+## 🎯 Streamlit Web App (Local Deployment)
+Alternatively, if you choose to run Streamlit-based interactive UI:
 
+### 💻 Start the Web App
+```
+streamlit run streamlit_app.py
+```
 
+### 🌟 Features
+- Upload your resume in PDF format
+- Choose between Semantic or Clustering recommendation algorithm
+- Configure the number of top recommendations (top_k)
+- View extracted resume text (optional)
+- Click Start Recommending Process to see your top recommended jobs
 
+### 🖥️ Example Output
+```java
+Top 5 Recommended Jobs for John Doe:
+
+Machine Learning Engineer: 0.701
+Data Scientist: 0.701
+AI Product Manager: 0.683
+Prompt Engineer (for AI): 0.664
+Mobile App Developer: 0.663
+```
