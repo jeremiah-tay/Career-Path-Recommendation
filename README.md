@@ -14,7 +14,7 @@ The system leverages Natural Language Processing (NLP), semantic embeddings, and
 - 🤖 **Clustering-Based Recommendation**: Optionally cluster similar jobs and match students within the most relevant group.
 - 🔍 **Top-N Job Recommendations**: Recommend the top 5 most relevant jobs for each student.
 - 📊 **PostgreSQL Integration**: Automatically stores parsed profiles and job recommendations in a PostgreSQL database.
-- 🌐 **Streamlit Web Interface**: Clean, interactive frontend for uploading resumes and viewing recommendations.
+- 🌐 **Streamlit Web Interface**: Clean, interactive UI for uploading resumes and viewing recommendations.
 
 ## 📁 Project Structure
 ```
@@ -48,7 +48,9 @@ git clone https://github.com/jeremiah-tay/Career-Path-Recommendation.git
 cd Career-Path-Recommendation
 pip install -r requirements.txt
 ```
-## 🧪 How It Works
+## 🧪 Usage Mode
+
+### ✅ Mode 1: Command-Line Interface (CLI)
 1. Place your resume PDF into the ```resume/``` folder (e.g., ```resume/John Doe Resume.pdf```)
 2. Open the main.py script and scroll to the bottom. Edit the following lines to point to your resume file:
     ```python
@@ -56,7 +58,7 @@ pip install -r requirements.txt
     resume_pdf_file = "John Doe Resume.pdf"
     text = extract_text(f"./resume/{resume_pdf_file}")
     main(text, top_k = 5, algorithm = "Clustering")
-3. Run the pipeline on your terminal:
+3. Run the pipeline on your terminal with this code:
    ```
    python main.py
    ```
@@ -67,6 +69,18 @@ pip install -r requirements.txt
    - Recommend the top 5 jobs
    - Insert both the student profile and recommendations into your PostgreSQL database
 
+### 🎯 Mode 2: Streamlit Web App (Interactive UI)
+1. Open main.py and in the terminal, launch the web app with this code:
+   ```
+    streamlit run streamlit_app.py
+    ```
+2. In the User Interface:
+   - Upload your resume (PDF)
+   - Choose between ```Semantic``` or ```Clustering``` algorithms
+   - Select number of job recommendations (```top_k```)
+   - Preview the extracted resume text (Optional)
+   - Click Start Recommending Process to view your top job matches
+
 ### 🤖 Algorithms
 You can switch the recommendation engine using the `algorithm` parameter at the bottom of the `main.py` file.
 
@@ -76,32 +90,6 @@ You can switch the recommendation engine using the `algorithm` parameter at the 
 | `Clustering`   | Uses KMeans to group similar jobs and recommend top matches in the cluster. |
 
 ## 📦 Sample Output
-```java
-Top 5 Recommended Jobs for John Doe:
-
-Machine Learning Engineer: 0.701
-Data Scientist: 0.701
-AI Product Manager: 0.683
-Prompt Engineer (for AI): 0.664
-Mobile App Developer: 0.663
-```
-
-## 🎯 Streamlit Web App (Local Deployment)
-Alternatively, if you choose to run Streamlit-based interactive UI:
-
-### 💻 Start the Web App
-```
-streamlit run streamlit_app.py
-```
-
-### 🌟 Features
-- Upload your resume in PDF format
-- Choose between Semantic or Clustering recommendation algorithm
-- Configure the number of top recommendations (top_k)
-- View extracted resume text (optional)
-- Click Start Recommending Process to see your top recommended jobs
-
-### 🖥️ Example Output
 ```java
 Top 5 Recommended Jobs for John Doe:
 
