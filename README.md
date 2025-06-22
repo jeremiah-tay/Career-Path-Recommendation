@@ -27,6 +27,7 @@ career-path-recommendation/
 ├── databaseProcessor.py                         # PostgreSQL data insertion
 ├── main.py                                      # Main pipeline file
 ├── streamlit_app.py                             # Streamlit app entry point
+├── requirements.txt                             # Python Dependencies
 ├── recommender_system_working_notebook.ipynb    # Project Rough Working
 ├── README.md                                    # Project documentation
 ```
