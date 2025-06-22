@@ -50,7 +50,7 @@ pip install -r requirements.txt
 ```
 ## 🧪 Usage Mode
 
-### ✅ Mode 1: Command-Line Interface (CLI)
+## ✅ Mode 1: Command-Line Interface (CLI)
 1. Place your resume PDF into the ```resume/``` folder (e.g., ```resume/John Doe Resume.pdf```)
 2. Open the main.py script and scroll to the bottom. Edit the following lines to point to your resume file:
     ```python
@@ -69,7 +69,7 @@ pip install -r requirements.txt
    - Recommend the top 5 jobs
    - Insert both the student profile and recommendations into your PostgreSQL database
 
-### 🎯 Mode 2: Streamlit Web App (Interactive UI)
+## 🎯 Mode 2: Streamlit Web App (Interactive UI)
 1. Open main.py and in the terminal, launch the web app with this code:
    ```
     streamlit run streamlit_app.py
@@ -81,7 +81,7 @@ pip install -r requirements.txt
    - Preview the extracted resume text (Optional)
    - Click Start Recommending Process to view your top job matches
 
-### 🤖 Algorithms
+## 🤖 Algorithms
 You can switch the recommendation engine using the `algorithm` parameter at the bottom of the `main.py` file.
 
 | Algorithm Name | Description                                                                 |
